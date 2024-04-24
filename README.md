@@ -1,6 +1,8 @@
 <h1 align="center">Pokedex</h1>
 <h4 align="center">Com PokeApi</h4>
 
+![cover-pokedex](https://github.com/andrefods1993/dio.me_JSDeveloper_modulo_2/assets/132412680/b8496889-b83c-46f1-b2c0-0b41740e984b)
+
 <p align="center">
   Projeto de Pokedex desenvolvido para o curso de Formação JavaScript Developer da plataforma DIO. A Pokedex utiliza a API REST da PokeApi para obter dados sobre Pokémons e exibi-los de forma interativa.
 </p>
