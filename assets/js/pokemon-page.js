@@ -19,12 +19,12 @@ function loadPokemon(pokemonId) {
 	});
 
 	pokeApi.getPokemon(pokemonId).then((pokemon) => {
-		const hpPercentage = (parseInt(pokemon.hp) / 300) * 100;
-		const attackPercentage = (parseInt(pokemon.attack) / 300) * 100;
-		const defensePercentage = (parseInt(pokemon.defense) / 300) * 100;
-		const spAtackPercentage = (parseInt(pokemon.specialAttack) / 300) * 100;
-		const spDefensePercentage = (parseInt(pokemon.specialDefense) / 300) * 100;
-		const speedPercentage = (parseInt(pokemon.speed) / 300) * 100;
+		const hpPercentage = (parseInt(pokemon.hp) / 250) * 100;
+		const attackPercentage = (parseInt(pokemon.attack) / 200) * 100;
+		const defensePercentage = (parseInt(pokemon.defense) / 250) * 100;
+		const spAtackPercentage = (parseInt(pokemon.specialAttack) / 200) * 100;
+		const spDefensePercentage = (parseInt(pokemon.specialDefense) / 250) * 100;
+		const speedPercentage = (parseInt(pokemon.speed) / 200) * 100;
 		const pokemon_content = `
       <!-- Background Ellipse -->
       <div class="bg--pokemon pokemon--${pokemon.mainType}"></div>
@@ -162,10 +162,18 @@ function btnPrevius(pokemonId) {
 	const pokemonIdPrevius = idAtual - 1;
 	const btnPrevious = document.getElementById('btn--previous');
 
-	btnPrevious.addEventListener('click', () => {
-		window.location.href = `pokemon-page.html?pokemonId=${pokemonIdPrevius}`;
-		loadPokemon(pokemonIdPrevius);
-	});
+	if (idAtual === 10001) {
+		btnPrevious.addEventListener('click', () => {
+			window.location.href = `pokemon-page.html?pokemonId=${1025}`;
+			loadPokemon(pokemonIdPrevius);
+		});
+	} else if (idAtual > 1) {
+		btnPrevious.addEventListener('click', () => {
+			window.location.href = `pokemon-page.html?pokemonId=${pokemonIdPrevius}`;
+			loadPokemon(pokemonIdPrevius);
+		});
+	}
+	console.log(idAtual);
 }
 
 function btnNext(pokemonId) {
@@ -173,10 +181,17 @@ function btnNext(pokemonId) {
 	const pokemonIdNext = idAtual + 1;
 	const btnNext = document.getElementById('btn--next');
 
-	btnNext.addEventListener('click', () => {
-		window.location.href = `pokemon-page.html?pokemonId=${pokemonIdNext}`;
-		loadPokemon(pokemonIdNext);
-	});
+	if (idAtual === 1025) {
+		btnNext.addEventListener('click', () => {
+			window.location.href = `pokemon-page.html?pokemonId=${10001}`;
+			loadPokemon(pokemonIdNext);
+		});
+	} else if (idAtual < 10263) {
+		btnNext.addEventListener('click', () => {
+			window.location.href = `pokemon-page.html?pokemonId=${pokemonIdNext}`;
+			loadPokemon(pokemonIdNext);
+		});
+	}
 }
 
 btnPrevius(pokemonId);
