@@ -1,0 +1,524 @@
+/* 
+*	--> Globals CSS
+*/
+@import url(global.css);
+
+/* 
+*	--> Logo Pokédex
+*/
+.logo {
+	text-align: end;
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	transition: all 300ms;
+}
+
+.logo--img {
+	width: 50%;
+	max-width: 150px;
+}
+
+/* 
+*	--> Contents
+*/
+.content__section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 1rem;
+	width: 80%;
+	height: 80%;
+	overflow: auto;
+	margin: auto;
+}
+
+.content__section h1 {
+	font-size: 1.8rem;
+	font-weight: 900;
+	text-align: center;
+	color: white;
+	margin: 0;
+	text-transform: capitalize;
+}
+
+.content__stats {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.content__evolution {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-left: 3vw;
+}
+
+#contentEvo {
+	margin: 0;
+	padding: 0;
+}
+
+/* 
+*	--> Background Ellipse
+*/
+.bg--pokemon {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100vw;
+	height: 40vh;
+	background: var(--bg-default-card);
+	clip-path: ellipse(60% 100% at 50% 0);
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	transition: all 300ms;
+}
+
+body.menu-active main.content .bg--pokemon {
+	left: 264px;
+	border-radius: 10px 0 0 10px;
+}
+
+/* 
+*	--> Pokemon
+*/
+.pokemon__photo {
+	text-align: center;
+}
+
+.pokemon__photo--img {
+	height: 50vw;
+	max-height: 250px;
+}
+
+.pokemon--type {
+	padding: 2rem;
+	text-align: center;
+}
+
+.pokemon--type--name {
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: white;
+	padding: 0.5rem 2rem;
+	background: var(--bg-default-type-card);
+	border-radius: 2rem;
+	text-transform: capitalize;
+}
+
+/* 
+* --> Pokemon Stats
+*/
+.pokemon__stats {
+	display: flex;
+	justify-content: center;
+}
+
+table {
+	width: 50%;
+}
+th,
+td {
+	padding: 8px;
+	text-align: left;
+}
+
+.pokemon__stats--name {
+	font-weight: 700;
+	color: var(--tertiary-color);
+}
+
+.pokemon__stats--value {
+	font-weight: 500;
+	color: var(--tertiary-color);
+}
+
+.pokemon__stats--progress,
+.pokemon__stats--progress progress {
+	width: 15vw;
+	max-width: 200px;
+}
+
+.progress-bar-container {
+	width: 20vw;
+	max-width: 200px;
+	height: 12px;
+	background-color: #c7c7c7;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+.progress-bar {
+	width: 0;
+	height: 100%;
+	border-radius: 1rem;
+	background: var(--bg-default-type-card);
+	transition: width 0.5s ease;
+}
+
+/* 
+*	--> Pokemon Evolution
+*/
+.pokemon__evolution--h2 {
+	font-size: 1.4rem;
+	font-weight: 800;
+	text-align: center;
+	margin: 0;
+	padding: 2rem;
+	color: var(--tertiary-color);
+}
+
+.pokemon__evolution {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+
+.pokemon__evolution__photo {
+	display: flex;
+	flex-direction: column;
+}
+
+.pokemon__evolution__photo--img {
+	max-width: 200px;
+	width: 100%;
+}
+
+.separation--line {
+	margin: 1rem 0;
+	padding: 1px;
+	background: var(--default-border);
+	max-width: 200px;
+	width: 100%;
+	border-radius: 2rem;
+}
+
+.pokemon__evolution__photo span {
+	font-weight: 600;
+	color: var(--tertiary-color);
+	text-transform: capitalize;
+}
+
+/* 
+*	--> Pagination Pokemon
+*/
+.pagination {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 5%;
+	padding: 2rem;
+	gap: 2rem;
+}
+
+.pagination__btn button {
+	font-weight: 600;
+	padding: 0.5rem 1.2rem;
+	border: none;
+	border-radius: 2rem;
+	background-color: var(--tertiary-color);
+	color: var(--primary-color);
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	transition: all 300ms;
+}
+
+.pagination__btn button:hover {
+	background-color: var(--secondary-color);
+	color: white;
+	transform: scale(1.05);
+}
+
+.pagination__btn button:active {
+	filter: brightness(80%);
+	color: var(--primary-color);
+}
+
+/*
+* --> Background Card
+*/
+.pokemon--normal {
+	background: linear-gradient(
+		180deg,
+		hsla(0, 0%, 66%, 1) 0%,
+		hsla(0, 0%, 93%, 1) 100%
+	);
+}
+
+.pokemon--fire {
+	background: linear-gradient(
+		180deg,
+		rgb(197, 2, 2) 0%,
+		hsla(8, 99%, 71%, 1) 100%
+	);
+}
+
+.pokemon--fighting {
+	background: linear-gradient(
+		180deg,
+		hsla(33, 100%, 50%, 1) 0%,
+		hsla(38, 99%, 71%, 1) 100%
+	);
+}
+
+.pokemon--water {
+	background: linear-gradient(
+		180deg,
+		hsla(195, 83%, 29%, 1) 0%,
+		hsla(188, 99%, 71%, 1) 100%
+	);
+}
+
+.pokemon--flying {
+	background: linear-gradient(
+		180deg,
+		hsla(240, 100%, 73%, 1) 0%,
+		hsla(240, 100%, 93%, 1) 100%
+	);
+}
+
+.pokemon--grass {
+	background: linear-gradient(
+		180deg,
+		hsla(154, 60%, 30%, 1) 0%,
+		hsla(150, 79%, 74%, 1) 100%
+	);
+}
+
+.pokemon--poison {
+	background: linear-gradient(
+		180deg,
+		hsla(282, 100%, 23%, 1) 0%,
+		hsla(240, 76%, 82%, 1) 100%
+	);
+}
+
+.pokemon--electric {
+	background: linear-gradient(
+		180deg,
+		rgb(255, 174, 0) 0%,
+		rgb(252, 211, 123) 100%
+	);
+}
+
+.pokemon--ground {
+	background: linear-gradient(
+		180deg,
+		rgb(80, 15, 15) 0%,
+		rgb(151, 60, 60) 100%
+	);
+}
+
+.pokemon--psychic {
+	background: linear-gradient(
+		180deg,
+		hsla(330, 60%, 41%, 1) 0%,
+		hsla(300, 76%, 77%, 1) 100%
+	);
+}
+
+.pokemon--rock {
+	background: linear-gradient(
+		180deg,
+		hsla(120, 7%, 50%, 1) 0%,
+		hsla(120, 7%, 70%, 1) 100%
+	);
+}
+
+.pokemon--ice {
+	background: linear-gradient(
+		180deg,
+		hsla(180, 100%, 37%, 1) 0%,
+		hsla(180, 100%, 83%, 1) 100%
+	);
+}
+
+.pokemon--bug {
+	background: linear-gradient(
+		180deg,
+		hsla(60, 100%, 27%, 1) 0%,
+		hsla(68, 99%, 71%, 1) 100%
+	);
+}
+
+.pokemon--dragon {
+	background: linear-gradient(
+		180deg,
+		hsla(240, 31%, 42%, 1) 0%,
+		hsla(240, 31%, 67%, 1) 100%
+	);
+}
+
+.pokemon--ghost {
+	background: linear-gradient(
+		180deg,
+		hsla(248, 28%, 53%, 1) 0%,
+		hsla(248, 28%, 73%, 1) 100%
+	);
+}
+
+.pokemon--dark {
+	background: linear-gradient(
+		180deg,
+		hsla(0, 0%, 15%, 1) 0%,
+		hsla(0, 0%, 49%, 1) 100%
+	);
+}
+
+.pokemon--steel {
+	background: linear-gradient(
+		180deg,
+		hsla(240, 12%, 65%, 1) 0%,
+		hsla(240, 82%, 91%, 1) 100%
+	);
+}
+
+.pokemon--fairy {
+	background: linear-gradient(
+		180deg,
+		hsla(342, 75%, 67%, 1) 0%,
+		hsla(341, 74%, 82%, 1) 100%
+	);
+}
+
+.pokemon--stellar {
+	background: linear-gradient(
+		180deg,
+		hsla(241, 78%, 16%, 1) 0%,
+		hsla(240, 4%, 36%, 1) 100%
+	);
+}
+
+/*
+*	--> Background Type
+*/
+.pokemon__card--type--normal {
+	background-color: #a9a9a9;
+}
+
+.pokemon__card--type--fire {
+	background-color: #8a0000;
+}
+
+.pokemon__card--type--fighting {
+	background-color: #ff8c00;
+}
+
+.pokemon__card--type--water {
+	background-color: #0d6987;
+}
+
+.pokemon__card--type--flying {
+	background-color: #7777ff;
+}
+
+.pokemon__card--type--grass {
+	background-color: #1f7a53;
+}
+
+.pokemon__card--type--poison {
+	background-color: #520075;
+}
+
+.pokemon__card--type--electric {
+	background-color: #ffae00;
+}
+
+.pokemon__card--type--ground {
+	background-color: #500f0f;
+}
+
+.pokemon__card--type--psychic {
+	background-color: #a72a69;
+}
+
+.pokemon__card--type--rock {
+	background-color: #778877;
+}
+
+.pokemon__card--type--ice {
+	background-color: #00bdbd;
+}
+
+.pokemon__card--type--bug {
+	background-color: #8a8a00;
+}
+
+.pokemon__card--type--dragon {
+	background-color: #4a4a8c;
+}
+
+.pokemon__card--type--ghost {
+	background-color: #6f66a9;
+}
+
+.pokemon__card--type--dark {
+	background-color: #262626;
+}
+
+.pokemon__card--type--steel {
+	background-color: #9b9bb0;
+}
+
+.pokemon__card--type--fairy {
+	background-color: #ea6c92;
+}
+
+.pokemon__card--type--stellar {
+	background-color: #0a0949;
+}
+
+/*
+*	--> Media queries
+*/
+@media screen and (min-width: 768px) {
+	.content__evolution {
+		flex-direction: row;
+	}
+
+	.pokemon__evolution {
+		flex-direction: row;
+	}
+
+	.separation--line {
+		margin: 0 1rem;
+		width: 1px;
+		max-height: 200px;
+		height: 22vh;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.content__stats {
+		flex-direction: row;
+	}
+
+	.content__evolution {
+		padding-left: 2rem;
+	}
+
+	.pokemon__evolution {
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.content__section {
+		height: 80%;
+	}
+
+	.content__evolution {
+		margin-left: 7vw;
+	}
+}

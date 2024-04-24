@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Pokédex</title>
+
+		<!-- Styles CSS -->
+		<link rel="stylesheet" href="assets/css/pokemon-page.css" />
+	</head>
+
+	<body>
+		<header>
+			<!-- Navbar -->
+			<nav id="slide-menu" class="menu">
+				<ul>
+					<li class="menu--home">
+						<a href="index.html">Início</a> <i class="gg-arrow-right"></i>
+					</li>
+					<li class="menu--pokeapi">
+						<a href="https://pokeapi.co/" target="_blank">PokéApi</a>
+						<i class="gg-arrow-right"></i>
+					</li>
+					<li class="menu--github">
+						<a href="https://github.com/andrefods1993" target="_blank"
+							>GitHub</a
+						>
+						<i class="gg-arrow-right"></i>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main class="content">
+			<!-- Menu Trigger Button  -->
+			<div class="menu-trigger"><i class="gg-menu"></i></div>
+
+			<!-- Logo -->
+			<div class="logo">
+				<a href="index.html"
+					><img
+						class="logo--img"
+						src="assets/images/logo.svg"
+						alt="Logo Pokédex"
+				/></a>
+			</div>
+
+			<div class="content__bg"></div>
+			<!-- Content -->
+			<section class="content__section" id="section__pokemon"></section>
+
+			<!-- Pagination Pokemon -->
+			<div class="pagination">
+				<div class="pagination__btn">
+					<button id="btn--previous" type="button">Anterior</button>
+				</div>
+				<div class="pagination__btn">
+					<button id="btn--next" type="button">Próximo</button>
+				</div>
+			</div>
+		</main>
+
+		<!-- Scripts JS -->
+		<script src="assets/js/slide-menu.js"></script>
+		<script src="assets/js/pokemon-model.js"></script>
+		<script src="assets/js/poke-api.js"></script>
+		<script src="assets/js/pokemon-page.js"></script>
+	</body>
+</html>

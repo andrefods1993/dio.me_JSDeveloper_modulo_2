@@ -1,0 +1,247 @@
+/*
+* --> Normalize CSS
+*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+/* 
+* --> Fonts
+*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* 
+* --> Icons
+*/
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/menu.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/arrow-right.css');
+
+/* 
+* --> Globals
+*/
+:root {
+	/* Main Colors */
+	--primary-color: #ffcc01;
+	--secondary-color: #2d6ab3;
+	--tertiary-color: #0f234e;
+	--quaternary-color: #e72028;
+	--text-hover: #61f0f5;
+	--bg-default-type-card: #4c929e;
+	/* Gradient Colors */
+	--bg-content: linear-gradient(
+		0deg,
+		rgb(200, 219, 247) 0%,
+		hsla(0, 0%, 100%, 1) 85%
+	);
+	--bg-default-card: linear-gradient(
+		180deg,
+		hsla(189, 35%, 46%, 1) 0%,
+		hsla(189, 35%, 76%, 1) 100%
+	);
+	/* Shadow */
+	--content-shadow: -3px 0 6px hsla(213, 14%, 34%, 0.5);
+	--card-shadow: 5px 5px 10px rgba(26, 26, 26, 0.3);
+	--img-card-shadow: drop-shadow(7px -2px 5px rgba(26, 26, 26, 0.4));
+	/* Border */
+	--default-border: #d2cfdd;
+}
+
+* {
+	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ol,
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	background: var(--quaternary-color);
+}
+
+/*
+* --> Navbar
+*/
+nav#slide-menu {
+	position: fixed;
+	top: 0;
+	left: -100px;
+	bottom: 0;
+	display: block;
+	float: left;
+	width: 100%;
+	max-width: 264px;
+	height: 100%;
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	transition: all 300ms;
+}
+
+nav#slide-menu > ul {
+	display: block;
+	margin: 40px;
+	padding: 0;
+	list-style: none;
+	opacity: 0.5;
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	transition: all 300ms;
+}
+
+nav#slide-menu > ul li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 1.3rem;
+	font-weight: 500;
+	color: var(--primary-color);
+	padding: 10px 0;
+	cursor: pointer;
+}
+
+i.gg-arrow-right {
+	margin-right: 40px;
+}
+
+nav#slide-menu > ul li:hover {
+	color: var(--text-hover);
+	transform: scale(1.1);
+	animation: arrow 2s linear infinite;
+}
+
+body.menu-active nav#slide-menu {
+	left: 0px;
+}
+
+body.menu-active nav#slide-menu ul {
+	left: 0px;
+	opacity: 1;
+}
+
+/*
+* -->Content
+*/
+main.content {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	background: var(--bg-content);
+	color: var(--tertiary-color);
+	border-radius: 0;
+	box-sizing: border-box;
+	-moz-box-shadow: var(--content-shadow);
+	-webkit-box-shadow: var(--content-shadow);
+	box-shadow: var(--content-shadow);
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	transition: all 300ms;
+}
+
+main.content div.menu-trigger {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 10px;
+	left: 10px;
+	width: 36px;
+	height: 36px;
+	background: var(--secondary-color);
+	color: var(--primary-color);
+	cursor: pointer;
+	border-radius: 10px;
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	transition: all 300ms;
+}
+
+main.content div.menu-trigger:hover {
+	background: var(--primary-color);
+	color: var(--secondary-color);
+}
+
+body.menu-active main.content,
+body.menu-active main.content .content__bg {
+	left: 264px;
+	border-radius: 10px 0 0 10px;
+}
+
+body.menu-active main.content .menu-trigger {
+	left: 274px;
+}
+
+.content__bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100vw;
+	min-height: 100vh;
+	background-image: url(../images/bg-1200.png);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position-x: 150%;
+	background-position-y: -2rem;
+	z-index: -1;
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	transition: all 300ms;
+}
+
+.logo {
+	text-align: center;
+}
+
+.logo--img {
+	width: 50%;
+	max-width: 250px;
+	filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.4));
+}
+
+/*
+* --> Animations
+*/
+@keyframes arrow {
+	0% {
+		transform: translateX(0px);
+	}
+	25% {
+		transform: translateX(-5px);
+	}
+	50% {
+		transform: translateX(0px);
+	}
+	75% {
+		transform: translateX(-5px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+/*
+*	--> Custom Scroll
+*/
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--tertiary-color);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--secondary-color);
+}

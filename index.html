@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Pokédex</title>
+
+		<!-- Styles CSS -->
+		<link rel="stylesheet" href="assets/css/html.css" />
+	</head>
+
+	<body>
+		<header>
+			<!-- Navbar -->
+			<nav id="slide-menu" class="menu">
+				<ul>
+					<li class="menu--home">
+						<a href="index.html">Início</a> <i class="gg-arrow-right"></i>
+					</li>
+					<li class="menu--pokeapi">
+						<a href="https://pokeapi.co/" target="_blank">PokéApi</a>
+						<i class="gg-arrow-right"></i>
+					</li>
+					<li class="menu--github">
+						<a href="https://github.com/andrefods1993" target="_blank"
+							>GitHub</a
+						>
+						<i class="gg-arrow-right"></i>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main class="content">
+			<!-- Menu Trigger Button  -->
+			<div class="menu-trigger"><i class="gg-menu"></i></div>
+
+			<!-- Logo -->
+			<div class="logo">
+				<a href="index.html"
+					><img
+						class="logo--img"
+						src="assets/images/logo.svg"
+						alt="Logo Pokédex"
+				/></a>
+			</div>
+
+			<div class="content__bg"></div>
+			<!-- Content -->
+			<section class="content__section">
+				<ol id="pokemonsList" class="pokemons__list">
+					<!-- Pokemon Card Model -->
+					<!-- <li class="pokemon__card">
+						<div class="bg--card">
+							<div class="pokemon__card__identification">
+								<span class="pokemon__card--name">Bulbasaur</span>
+								<span class="pokemon__card--number">#001</span>
+							</div>
+
+							<div class="pokemon__card__detail">
+								<ol class="pokemon__card--types">
+									<li class="pokemon__card--type">grass</li>
+									<li class="pokemon__card--type">poison</li>
+								</ol>
+
+								<img
+									class="pokemon__card--img"
+									src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png"
+									alt="Bulbasaur" />
+							</div>
+						</div>
+					</li> -->
+
+					<!-- Pokemons Cards -->
+				</ol>
+
+				<!-- Pagination -->
+				<div>
+					<ul id="pagination" class="pagination">
+						<li id="btnPagePrevius" class="page__item page__item--previous">
+							<a class="page__item--link">
+								<span id="linkPagePrevius">&laquo;</span>
+							</a>
+						</li>
+
+						<!-- Pagination Itens -->
+
+						<li id="pageNumber" class="page__item">
+							<input
+								id="inputPageNumber"
+								class="page__item--number"
+								type="number"
+								name="page__item--number"
+								placeholder="..."
+								min="0"
+								max="214" />
+						</li>
+						<li id="btnPageNext" class="page__item page__item--next">
+							<a class="page__item--link">
+								<span id="linkPageNext">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<!-- Scripts JS -->
+		<script src="assets/js/slide-menu.js"></script>
+		<script src="assets/js/pokemon-model.js"></script>
+		<script src="assets/js/poke-api.js"></script>
+		<script src="assets/js/navegation-pokemon.js"></script>
+		<script src="assets/js/html.js"></script>
+	</body>
+</html>
